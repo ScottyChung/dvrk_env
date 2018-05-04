@@ -123,7 +123,7 @@
       </inertial>
     </link>
 
-     <!--link name="${prefix}front_parallel_link">
+     <link name="${prefix}front_parallel_link">
        <visual>
          <geometry>
            <mesh filename="package://dvrk_model/MTM/meshes/Link.dae"/>
@@ -138,7 +138,7 @@
          <mass value="0.8"/>
          <inertia ixx="8.0" ixy="0.0" ixz="0.0" iyy="8.0" iyz="0.0" izz="8.0"/>
        </inertial>
-     </link-->
+     </link>
 
     <joint name="${prefix}shoulder_pitch_joint" type="revolute">
       <parent link="${prefix}outer_yaw_link"/>
@@ -163,7 +163,7 @@
       <mimic joint="${prefix}elbow_pitch_joint" multiplier="1"/>
     </joint>
 
-    <!--joint name="${prefix}elbow_pitch_parallel_joint" type="revolute">
+    <joint name="${prefix}elbow_pitch_parallel_joint" type="revolute">
        <parent link="${prefix}top_parallel_link"/>
        <child link="${prefix}front_parallel_link"/>
        <origin rpy="0 0 0" xyz=".1011 0 -0.03"/>
@@ -171,7 +171,7 @@
        <limit effort="100.0" lower="${-PI/4}" upper="${PI/4}" velocity="10"/>
        <joint_properties damping="1.0" friction="0.0"/>
        <mimic joint="${prefix}elbow_pitch_joint" multiplier="-1"/>
-     </joint-->
+     </joint>
 
     <joint name="${prefix}elbow_pitch_joint" type="revolute">
       <parent link="${prefix}back_parallel_link"/>

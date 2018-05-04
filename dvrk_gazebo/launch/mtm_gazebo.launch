@@ -16,6 +16,19 @@
     <arg name="verbose" value="true" />
   </include>
 
+<!-- Load joint controller configurations from YAML file to parameter server -->
+<rosparam file="$(find dvrk_gazebo_control)/config/mtm.yaml" command="load"/>
+
+<!-- load the controllers -->
+<!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/mtm" args="right_outer_yaw_joint_controller
+    right_shoulder_pitch_joint_controller
+    right_elbow_pitch_joint_controller
+    right_wrist_platform_joint_controller
+    right_wrist_pitch_joint_controller
+    right_wrist_yaw_joint_controller
+    right_wrist_roll_joint_controller"/-->
+
 <param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/MTM/mtm_right.sdf'" />
 
 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"

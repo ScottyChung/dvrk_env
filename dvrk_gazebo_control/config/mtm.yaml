@@ -1,0 +1,29 @@
+mtm:
+  right_outer_yaw_joint_controller:
+    p: 200
+    i: 40
+    d: 50
+  right_shoulder_pitch_joint_controller:
+    p: 100
+    i: 20
+    d: 10
+  right_shoulder_pitch_parallel_joint_controller:
+    p: 100
+    i: 20
+    d: 10
+  right_wrist_platform_joint_controller:
+    p: 100
+    i: 20
+    d: 20
+  right_wrist_pitch_joint_controller:
+    p: 100
+    i: 20
+    d: 20
+  right_wrist_yaw_joint_controller:
+    p: 100
+    i: 20
+    d: 20
+  right_wrist_roll_joint_controller:
+    p: 100
+    i: 20
+    d: 20
