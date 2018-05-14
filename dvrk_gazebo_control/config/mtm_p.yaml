@@ -7,7 +7,7 @@ mtm:
     p: 100
     i: 20
     d: 10
-  right_elbow_pitch_joint_controller:
+  right_shoulder_pitch_parallel_joint_controller:
     p: 100
     i: 20
     d: 10
