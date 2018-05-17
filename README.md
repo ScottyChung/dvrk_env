@@ -13,6 +13,8 @@ Ankur Agrawal:asagrawal@wpi.edu
 
 Radian Azhar Gondokaryono:ragondokaryono@wpi.edu
 
+Yan Wang: ywang28@wpi.edu
+
 
 # Install
 * download & compile dvrk_gazebo_ros
