@@ -72,7 +72,7 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
 
     // joint_obj.setPositionTarget();
     this->updateConnection[i] = gazebo::event::Events::ConnectWorldUpdateBegin(boost::bind(&joint_class::update, joint_obj));
-    this->updateStates = gazebo::event::Events::ConnectWorldUpdateBegin(boost::bind(&dvrkGazeboControlPlugin::PublishStates,this));
+    this->updateStates = gazebo::event::Events::ConnectWorldUpdateEnd(boost::bind(&dvrkGazeboControlPlugin::PublishStates,this));
   }
   // this->PublishStates(); //Publish the read values from Gazebo to ROS
 }
@@ -205,6 +205,7 @@ void joint_class::setPositionTarget()
 {
   double p, i, d;
   getPID(p, i, d);
+  //ROS_INFO("pid: %f, %f, %f", p, i, d);
 
   if (p<0|| i<0 || d<0)
   {

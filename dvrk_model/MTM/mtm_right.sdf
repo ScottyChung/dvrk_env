@@ -42,7 +42,7 @@
       <pose frame=''>0.25 0 1 0 -0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.2</mass>
+        <mass>0.1</mass>
         <inertia>
           <ixx>0.01</ixx>
           <ixy>0</ixy>
@@ -79,8 +79,8 @@
         <limit>
           <lower>-1.309</lower>
           <upper>0.785398</upper>
-          <effort>200</effort>
-          <velocity>2</velocity>
+          <effort>500</effort>
+          <velocity>3</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -258,7 +258,7 @@
         <limit>
           <lower>-0.785398</lower>
           <upper>0.785398</upper>
-          <effort>100</effort>
+          <effort>200</effort>
           <velocity>10</velocity>
         </limit>
         <dynamics>
@@ -272,14 +272,14 @@
       <pose frame=''>0.25 -0.3645 0.68623 -0 -0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <mass>0.05</mass>
         <inertia>
-          <ixx>0.005</ixx>
+          <ixx>0.002</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.005</iyy>
+          <iyy>0.002</iyy>
           <iyz>0</iyz>
-          <izz>0.005</izz>
+          <izz>0.002</izz>
         </inertia>
       </inertial>
       <collision name='right_wrist_platform_link_collision'>
@@ -323,7 +323,7 @@
       <pose frame=''>0.25 -0.3645 0.68623 -1.5708 0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <mass>0.05</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
@@ -374,7 +374,7 @@
       <pose frame=''>0.25 -0.3645 0.68623 -0 0 3.14159</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <mass>0.05</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
@@ -425,7 +425,7 @@
       <pose frame=''>0.25 -0.3255 0.68623 -1.57079 1.57079 3.14159</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <mass>0.05</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
