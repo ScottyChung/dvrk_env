@@ -263,6 +263,6 @@ void joint_class::setDefaultMode()
     mode = Position;
   }
   // change here if you want the robot in Gazebo to run in effort control mode.
-  //mode = Effort;
+  mode = Effort;
 }
 }

@@ -44,12 +44,12 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.2</ixx>
+          <ixx>0.3</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.2</iyy>
+          <iyy>0.3</iyy>
           <iyz>0</iyz>
-          <izz>0.2</izz>
+          <izz>0.3</izz>
         </inertia>
       </inertial>
       <collision name='right_outer_yaw_link_collision'>
@@ -95,12 +95,12 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
-          <ixx>0.05</ixx>
+          <ixx>0.01</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.05</iyy>
+          <iyy>0.15</iyy>
           <iyz>0</iyz>
-          <izz>0.05</izz>
+          <izz>0.15</izz>
         </inertia>
       </inertial>
       <collision name='right_back_parallel_link_collision'>
@@ -146,7 +146,7 @@
       <pose frame=''>0.23 -0.1 0.80963 1.57079 0 1.57079</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.02</mass>
+        <mass>0.01</mass>
         <inertia>
           <ixx>0.003</ixx>
           <ixy>0</ixy>
@@ -221,14 +221,14 @@
       <pose frame=''>0.25 -0 0.53023 -1.5708 0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.3</mass>
+        <mass>0.2</mass>
         <inertia>
-          <ixx>0.1</ixx>
+          <ixx>0.02</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.1</iyy>
+          <iyy>0.2</iyy>
           <iyz>0</iyz>
-          <izz>0.1</izz>
+          <izz>0.2</izz>
         </inertia>
       </inertial>
       <collision name='right_bottom_parallel_link_collision'>
@@ -272,7 +272,7 @@
       <pose frame=''>0.25 -0.3645 0.68623 -0 -0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.05</mass>
+        <mass>0.02</mass>
         <inertia>
           <ixx>0.002</ixx>
           <ixy>0</ixy>
@@ -323,7 +323,7 @@
       <pose frame=''>0.25 -0.3645 0.68623 -1.5708 0 1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
@@ -374,7 +374,7 @@
       <pose frame=''>0.25 -0.3645 0.68623 -0 0 3.14159</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
@@ -425,7 +425,7 @@
       <pose frame=''>0.25 -0.3255 0.68623 -1.57079 1.57079 3.14159</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
@@ -476,7 +476,7 @@
       <pose frame=''>0.185 0 0.80963 1.5708 -0 -1.5708</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <mass>0.02</mass>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0</ixy>
