@@ -14,6 +14,8 @@
 
 namespace dvrk_plugins
 {
+enum Mode {Position, PositionTarget, Effort};
+
 class dvrkGazeboControlPlugin : public gazebo::ModelPlugin
 {
 public:
@@ -78,7 +80,8 @@ private:
   gazebo::physics::JointPtr jointPtr;
   double p, i, d;
   double joint_pos;
-  bool mode;
+  //bool mode;
+  Mode mode;
   int dynamic_init;
 };
 

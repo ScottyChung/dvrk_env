@@ -77,7 +77,7 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
   // this->PublishStates(); //Publish the read values from Gazebo to ROS
 }
 
-void joint_class::update()
+/*void joint_class::update()
 {
   if (mode==1)
   {
@@ -88,6 +88,23 @@ void joint_class::update()
   else
   {
     setPosition();
+  }
+}*/
+void joint_class::update()
+{
+  if (mode == PositionTarget)
+  {
+    if (dynamic_init==0)
+      setPositionTarget();
+    dynamic_init=1;
+  }
+  else if (mode == Position)
+  {
+    setPosition();
+  }
+  else
+  {
+    //nothing
   }
 }
 
@@ -100,14 +117,16 @@ void joint_class::SetPosition(const std_msgs::Float64Ptr& msg)
     return;
   }
   joint_pos=msg->data;
-  mode=0;
+  //mode=0;
+  mode = Position;
 }
 
 //callback function to set target position and use the pid controller in Gazebo. pid values are specified through the rosparam server
 void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg)
 {
   joint_pos=msg->data;
-  mode=1;
+  //mode=1;
+  mode = PositionTarget;
   dynamic_init=0;
   setPositionTarget();
 }
@@ -234,8 +253,16 @@ bool joint_class::isInLoop()
 void joint_class::setDefaultMode()
 {
   if (isInLoop())
-    mode=1;
+  {
+    //mode=1;
+    mode = PositionTarget;
+  }
   else
-    mode=0;
+  {
+    //mode=0;
+    mode = Position;
+  }
+  // change here if you want the robot in Gazebo to run in effort control mode.
+  //mode = Effort;
 }
 }
