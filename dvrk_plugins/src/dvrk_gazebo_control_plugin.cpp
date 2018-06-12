@@ -209,6 +209,11 @@ void joint_class::setController()
 //Function to access pid values from the private variables of joint class
 void joint_class::getPID(double& K_p, double& K_i, double& K_d)
 {
+    // used for changing PID parameters in real time.
+//  if(cnt%1000 == 0)
+//  {
+//      setController();
+//  }
   K_p=p;
   K_d=d;
   K_i=i;
@@ -236,6 +241,7 @@ void joint_class::setPositionTarget()
   parent_model->GetJointController()->SetPositionPID(jointPtr->GetScopedName(), pid);
 
   parent_model->GetJointController()->SetPositionTarget(jointPtr->GetScopedName(), joint_pos);
+  cnt++;
 }
 
 void joint_class::name(std::string &name)

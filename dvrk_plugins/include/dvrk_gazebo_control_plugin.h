@@ -77,12 +77,13 @@ public:
 
 private:
   std::string joint_name;
-  gazebo::physics::JointPtr jointPtr;
+  gazebo::physics::JointPtr jointPtr = 0;
   double p, i, d;
   double joint_pos;
   //bool mode;
   Mode mode;
   int dynamic_init;
+  int cnt = 0;
 };
 
 GZ_REGISTER_MODEL_PLUGIN(dvrkGazeboControlPlugin)
