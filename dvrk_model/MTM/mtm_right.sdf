@@ -541,5 +541,14 @@
       <updateRate>100.0</updateRate>
     </plugin>
     <plugin name='dvrk_plugins' filename='libdvrk_plugins.so'/>
+
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>right_wrist_roll_link</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>1000.0</updateRate>
+    </plugin>
   </model>
 </sdf>
