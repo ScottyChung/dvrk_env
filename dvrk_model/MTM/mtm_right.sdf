@@ -2,17 +2,17 @@
   <model name='master'>
   <static> false </static>
     <link name='right_top_panel'>
-      <pose frame=''>0.25 0 1 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.9</mass>
+        <pose frame=''>0.03648 0.008713 0.040499 0 -0 0</pose>
+        <mass>0.58739</mass>
         <inertia>
-          <ixx>0.01</ixx>
+          <ixx>1</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.01</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>0.01</izz>
+          <izz>1</izz>
         </inertia>
       </inertial>
       <collision name='right_top_panel_collision'>
@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/Top Panel.STL</uri>
+            <uri>model://MTM/meshes/right_top_panel.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -29,27 +29,29 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/Top Panel.dae</uri>
+            <uri>model://MTM/meshes/right_top_panel.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
+
     <joint name='right_fixed_joint' type='fixed'>
       <child>right_top_panel</child>
       <parent>world</parent>
     </joint>
+
     <link name='right_outer_yaw_link'>
-      <pose frame=''>0.25 0 1 0 -0 1.5708</pose>
+      <pose frame=''>0 0 -0.21537+1 0 -0 0</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>2</mass>
+        <pose frame=''>0.013424 0.062051 0.13219 0 -0 0</pose>
+        <mass>1.0912</mass>
         <inertia>
-          <ixx>0.01</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.01</iyy>
-          <iyz>0</iyz>
-          <izz>0.01</izz>
+          <ixx>0.0071198</ixx>
+          <ixy>0.00026822</ixy>
+          <ixz>-0.0005779</ixz>
+          <iyy>0.0059149</iyy>
+          <iyz>0.0027188</iyz>
+          <izz>0.0013189</izz>
         </inertia>
       </inertial>
       <collision name='right_outer_yaw_link_collision'>
@@ -57,7 +59,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/OutPitch_Shoulder.STL</uri>
+            <uri>model://MTM/meshes/right_outer_yaw_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -66,21 +68,22 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/OutPitch_Shoulder.dae</uri>
+            <uri>model://MTM/meshes/right_outer_yaw_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
+    
     <joint name='right_outer_yaw_joint' type='revolute'>
       <child>right_outer_yaw_link</child>
       <parent>right_top_panel</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-0.6981</lower>
-          <upper>1.1345</upper>
-          <effort>500</effort>
-          <velocity>5</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -90,17 +93,17 @@
       </axis>
     </joint>
     <link name='right_back_parallel_link'>
-      <pose frame=''>0.25 0 0.80963 3.14159 -1.57079 -3.14159</pose>
+      <pose frame=''>0 0 -0.21537 -1.57079 1.57079 3.14159</pose>
       <inertial>
-        <pose frame=''>-0.05 0 0 0 -0 0</pose>
-        <mass>2</mass>
+        <pose frame=''>0.076362 -0.007849 0.00814 0 -0 0</pose>
+        <mass>0.64722</mass>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.035</iyy>
-          <iyz>0</iyz>
-          <izz>0.035</izz>
+          <ixx>2.9358e-05</ixx>
+          <ixy>3.2697e-05</ixy>
+          <ixz>0.00016123</ixz>
+          <iyy>0.00095009</iyy>
+          <iyz>-5.7185e-06</iyz>
+          <izz>0.00092305</izz>
         </inertia>
       </inertial>
       <collision name='right_back_parallel_link_collision'>
@@ -108,7 +111,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/ArmParallel.STL</uri>
+            <uri>model://MTM/meshes/right_back_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -117,7 +120,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/ArmParallel.dae</uri>
+            <uri>model://MTM/meshes/right_back_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -126,12 +129,12 @@
       <child>right_back_parallel_link</child>
       <parent>right_outer_yaw_link</parent>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>4e-06 1 -0</xyz>
         <limit>
-          <lower>-0.2618</lower>
-          <upper>0.8727</upper>
-          <effort>200</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -140,96 +143,18 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-
-    <!-- -->
-    <link name='right_front_parallel_link'>
-      <pose frame=''>0.23 -0.1 0.80963 1.57079 0 1.57079</pose>
-      <inertial>
-        <pose frame=''>0 -0.15 -0.008 0 -0 0</pose>
-        <mass>0.05</mass>
-        <inertia>
-          <ixx>0.0003</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0000005</iyy>
-          <iyz>0</iyz>
-          <izz>0.0003</izz>
-        </inertia>
-      </inertial>
-      <collision name='right_front_parallel_link_collision'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/Link.STL</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='right_front_parallel_link_visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/Link.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    
-
-    <joint name='right_front_shoulder_pitch_joint' type='revolute'>
-      <child>right_front_parallel_link</child>
-      <parent>right_top_parallel_link</parent>
-      <axis>
-        <xyz>-1 0 0</xyz>
-        <limit>
-          <lower>-3.14</lower>
-          <upper>3.14</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-
-    <joint name='right_front_elbow_pitch_joint' type='revolute'>
-      <pose>-0.1019 0 0 0 0 0 </pose>
-      <child>right_bottom_parallel_link</child>
-      <parent>right_front_parallel_link</parent>
-      <axis>
-        <xyz>-1 0 0</xyz>
-        <limit>
-          <lower>-3.14</lower>
-          <upper>3.14</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-	<!-- -->
-
-	
     <link name='right_bottom_parallel_link'>
-      <pose frame=''>0.25 -0 0.53023 -1.5708 0 1.5708</pose>
+      <pose frame=''>-1e-06 -0 -0.49504 1.5708 -0.0027 -4e-06</pose>
       <inertial>
-        <pose frame=''>-0.15 0 0 0 -0 0</pose>
-        <mass>1</mass>
+        <pose frame=''>0.18263 0.005514 -1.2e-05 0 -0 0</pose>
+        <mass>0.89273</mass>
         <inertia>
-          <ixx>0.0001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.015</iyy>
-          <iyz>0</iyz>
-          <izz>0.015</izz>
+          <ixx>2.0873e-09</ixx>
+          <ixy>-6.7899e-07</ixy>
+          <ixz>1.572e-07</ixz>
+          <iyy>0.00023271</iyy>
+          <iyz>4.5867e-10</iyz>
+          <izz>0.00023271</izz>
         </inertia>
       </inertial>
       <collision name='right_bottom_parallel_link_collision'>
@@ -237,7 +162,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/BottomArm.STL</uri>
+            <uri>model://MTM/meshes/right_bottom_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -246,7 +171,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/BottomArm.dae</uri>
+            <uri>model://MTM/meshes/right_bottom_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -255,12 +180,12 @@
       <child>right_bottom_parallel_link</child>
       <parent>right_back_parallel_link</parent>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>4e-06 1 -0</xyz>
         <limit>
-          <lower>-0.8727</lower>
-          <upper>0.6109</upper>
-          <effort>200</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -269,20 +194,18 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    
-    
     <link name='right_wrist_platform_link'>
-      <pose frame=''>0.25 -0.3645 0.68623 -0 -0 1.5708</pose>
+      <pose frame=''>0.364091 -1e-06 -0.343456 -4e-06 -0.0027 -4e-06</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.1</mass>
+        <pose frame=''>0 0.075884 -0.079722 0 -0 0</pose>
+        <mass>0.32541</mass>
         <inertia>
-          <ixx>0.0001</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0001</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0.0001</izz>
+          <izz>0</izz>
         </inertia>
       </inertial>
       <collision name='right_wrist_platform_link_collision'>
@@ -290,7 +213,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristPlatform.STL</uri>
+            <uri>model://MTM/meshes/right_wrist_platform_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -299,21 +222,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristPlatform.dae</uri>
+            <uri>model://MTM/meshes/right_wrist_platform_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
-    <joint name='right_wrist_platform_joint' type='fixed'>
+    <joint name='right_wrist_platform_joint' type='revolute'>
       <child>right_wrist_platform_link</child>
       <parent>right_bottom_parallel_link</parent>
       <axis>
-        <xyz>-0 -0 1</xyz>
+        <xyz>-0.0027 4e-06 0.999996</xyz>
         <limit>
-          <lower>-1.0472</lower>
-          <upper>4.27606</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -322,20 +245,18 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-
-    <!-- -->
     <link name='right_wrist_pitch_link'>
-      <pose frame=''>0.25 -0.3645 0.68623 -1.5708 0 1.5708</pose>
+      <pose frame=''>0.364091 -1e-06 -0.343456 1.5708 -0.0027 -4e-06</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.05</mass>
+        <pose frame=''>9.6e-05 -0.061955 -0.044889 0 -0 0</pose>
+        <mass>0.11725</mass>
         <inertia>
-          <ixx>0.00001</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00001</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0.00001</izz>
+          <izz>0</izz>
         </inertia>
       </inertial>
       <collision name='right_wrist_pitch_link_collision'>
@@ -343,7 +264,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristPitch.STL</uri>
+            <uri>model://MTM/meshes/right_wrist_pitch_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -352,21 +273,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristPitch.dae</uri>
+            <uri>model://MTM/meshes/right_wrist_pitch_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
-    <joint name='right_wrist_pitch_joint' type='fixed'>
+    <joint name='right_wrist_pitch_joint' type='revolute'>
       <child>right_wrist_pitch_link</child>
       <parent>right_wrist_platform_link</parent>
       <axis>
-        <xyz>-1 0 -0</xyz>
+        <xyz>4e-06 1 -0</xyz>
         <limit>
-          <lower>-1.5708</lower>
-          <upper>3.14159</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -376,17 +297,17 @@
       </axis>
     </joint>
     <link name='right_wrist_yaw_link'>
-      <pose frame=''>0.25 -0.3645 0.68623 -0 0 3.14159</pose>
+      <pose frame=''>0.364091 -1e-06 -0.343456 3.1389 0 1.5708</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.03</mass>
+        <pose frame=''>-0.002136 0.049256 -0.031864 0 -0 0</pose>
+        <mass>0.052383</mass>
         <inertia>
-          <ixx>0.00001</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00001</iyy>
-          <iyz>0</iyz>
-          <izz>0.00001</izz>
+          <ixx>1.7463e-05</ixx>
+          <ixy>1.081e-07</ixy>
+          <ixz>5.9636e-08</ixz>
+          <iyy>4.0755e-06</iyy>
+          <iyz>-7.3861e-06</iyz>
+          <izz>1.339e-05</izz>
         </inertia>
       </inertial>
       <collision name='right_wrist_yaw_link_collision'>
@@ -394,7 +315,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristYaw.STL</uri>
+            <uri>model://MTM/meshes/right_wrist_yaw_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -403,21 +324,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristYaw.dae</uri>
+            <uri>model://MTM/meshes/right_wrist_yaw_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
-    <joint name='right_wrist_yaw_joint' type='fixed'>
+    <joint name='right_wrist_yaw_joint' type='revolute'>
       <child>right_wrist_yaw_link</child>
       <parent>right_wrist_pitch_link</parent>
       <axis>
-        <xyz>-0 -0 1</xyz>
+        <xyz>0.002696 -0 -0.999996</xyz>
         <limit>
-          <lower>-0.785398</lower>
-          <upper>0.785398</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -427,17 +348,17 @@
       </axis>
     </joint>
     <link name='right_wrist_roll_link'>
-      <pose frame=''>0.25 -0.3255 0.68623 -1.57079 1.57079 3.14159</pose>
+      <pose frame=''>0.364091 -1e-06 -0.343456 -1.57349 0 1.5708</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.01</mass>
+        <pose frame=''>0 -4e-06 -0.014612 0 -0 0</pose>
+        <mass>0.0095577</mass>
         <inertia>
-          <ixx>0.0000001</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0000001</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0.0000001</izz>
+          <izz>0</izz>
         </inertia>
       </inertial>
       <collision name='right_wrist_roll_link_collision'>
@@ -445,7 +366,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristRoll.STL</uri>
+            <uri>model://MTM/meshes/right_wrist_roll_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -454,21 +375,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/WristRoll.dae</uri>
+            <uri>model://MTM/meshes/right_wrist_roll_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
-    <joint name='right_wrist_roll_joint' type='fixed'>
+    <joint name='right_wrist_roll_joint' type='revolute'>
       <child>right_wrist_roll_link</child>
       <parent>right_wrist_yaw_link</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>-0.999996 -0 -0.002696</xyz>
         <limit>
-          <lower>-4.71239</lower>
-          <upper>4.71239</upper>
-          <effort>100</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>1</effort>
+          <velocity>1</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -477,21 +398,18 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-	<!-- -->
-
-    <!-- -->
     <link name='right_top_parallel_link'>
-      <pose frame=''>0.185 0 0.80963 1.5708 -0 -1.5708</pose>
+      <pose frame=''>0 0 -0.21537 1.5708 0 3.14159</pose>
       <inertial>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <mass>0.5</mass>
+        <pose frame=''>0.038219 -0 0.06975 0 -0 0</pose>
+        <mass>0.10494</mass>
         <inertia>
-          <ixx>0.002</ixx>
+          <ixx>0</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.002</iyy>
+          <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0.002</izz>
+          <izz>0</izz>
         </inertia>
       </inertial>
       <collision name='right_top_parallel_link_collision'>
@@ -499,7 +417,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/ArmParallel1.STL</uri>
+            <uri>model://MTM/meshes/right_top_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -508,21 +426,21 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://MTM/meshes/ArmParallel1.dae</uri>
+            <uri>model://MTM/meshes/right_top_parallel_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
     <joint name='right_shoulder_pitch_parallel_joint' type='revolute'>
       <child>right_top_parallel_link</child>
-      <parent>right_back_parallel_link</parent>
+      <parent>right_outer_yaw_link</parent>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>-7e-06 -1 4e-06</xyz>
         <limit>
-          <lower>-1.5708</lower>
-          <upper>1.5708</upper>
-          <effort>200</effort>
-          <velocity>10</velocity>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -531,24 +449,56 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-	<!-- -->
-    <static>0</static>
-    <plugin name='force_torque_sensor' filename='libgazebo_ros_f3d.so'>
-      <bodyName>right_bottom_parallel_link</bodyName>
-      <frameName>right_bottom_parallel_link</frameName>
-      <topicName>/force_torque_feedback</topicName>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>100.0</updateRate>
-    </plugin>
-    <plugin name='dvrk_plugins' filename='libdvrk_plugins.so'/>
-
-    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
-      <alwaysOn>true</alwaysOn>
-      <bodyName>right_wrist_roll_link</bodyName>
-      <topicName>imu</topicName>
-      <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.1</gaussianNoise>
-      <updateRate>1000.0</updateRate>
-    </plugin>
+    <link name='right_front_parallel_link'>
+      <pose frame=''>-0.1011 1e-06 -0.21537 1.57206 1.5679 -3.14033</pose>
+      <inertial>
+        <pose frame=''>0.1397 0 0.0265 0 -0 0</pose>
+        <mass>0.041436</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_front_parallel_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://MTM/meshes/right_front_parallel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_front_parallel_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://MTM/meshes/right_front_parallel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='right_front_shoulder_pitch_joint' type='revolute'>
+      <child>right_front_parallel_link</child>
+      <parent>right_top_parallel_link</parent>
+      <axis>
+        <xyz>-7e-06 -1 4e-06</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
   </model>
 </sdf>

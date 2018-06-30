@@ -44,12 +44,12 @@
     <link name="${prefix}top_panel">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/Top Panel.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_top_panel.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/Top Panel.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_top_panel.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -64,7 +64,7 @@
     <joint name="${prefix}outer_yaw_joint" type="revolute">
       <parent link="${prefix}top_panel"/>
       <child link="${prefix}outer_yaw_link"/>
-      <origin rpy="0 0 ${PI/2}" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.21537"/>
       <axis xyz="0 0 1"/>
       <!--rotates about z axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -75,12 +75,12 @@
     <link name="${prefix}outer_yaw_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/OutPitch_Shoulder.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_outer_yaw_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/OutPitch_Shoulder.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_outer_yaw_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -92,12 +92,12 @@
     <link name="${prefix}back_parallel_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/ArmParallel.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_back_parallel_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/ArmParallel.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_back_parallel_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -109,12 +109,12 @@
     <link name="${prefix}top_parallel_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/ArmParallel1.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_top_parallel_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/ArmParallel1.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_top_parallel_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -126,12 +126,12 @@
      <link name="${prefix}front_parallel_link">
        <visual>
          <geometry>
-           <mesh filename="package://dvrk_model/MTM/meshes/Link.dae"/>
+           <mesh filename="package://dvrk_model/MTM/meshes/right_front_parallel_link.STL"/>
          </geometry>
        </visual>
        <collision>
          <geometry>
-           <mesh filename="package://dvrk_model/MTM/meshes/Link.STL"/>
+           <mesh filename="package://dvrk_model/MTM/meshes/right_front_parallel_link.STL"/>
          </geometry>
        </collision>
        <inertial>
@@ -143,7 +143,7 @@
     <joint name="${prefix}shoulder_pitch_joint" type="revolute">
       <parent link="${prefix}outer_yaw_link"/>
       <child link="${prefix}back_parallel_link"/>  <!-- xyz= 0 0 -.19037-->
-      <origin rpy="${-PI/2} ${-PI/2} 0" xyz="0 0 -0.19037"/>
+      <origin rpy="${-PI/2} ${PI/2} 0" xyz="0 0 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about  x axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -154,7 +154,7 @@
     <joint name="${prefix}shoulder_pitch_parallel_joint" type="revolute">
       <parent link="${prefix}back_parallel_link"/>
       <child link="${prefix}top_parallel_link"/>
-      <origin rpy="0 0 ${-PI/2}" xyz="0 0 0.065"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0 0 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about  x axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -166,7 +166,7 @@
     <joint name="${prefix}elbow_pitch_parallel_joint" type="revolute">
        <parent link="${prefix}top_parallel_link"/>
        <child link="${prefix}front_parallel_link"/>
-       <origin rpy="0 0 0" xyz=".1011 0 -0.03"/>
+       <origin rpy="0 0 ${-PI/2}" xyz="0.1011 0 0"/>
        <axis xyz="0 0 1"/>
        <limit effort="100.0" lower="${-PI/4}" upper="${PI/4}" velocity="10"/>
        <joint_properties damping="1.0" friction="0.0"/>
@@ -176,7 +176,7 @@
     <joint name="${prefix}elbow_pitch_joint" type="revolute">
       <parent link="${prefix}back_parallel_link"/>
       <child link="${prefix}bottom_parallel_link"/>  <!-- xyz= -->
-      <origin rpy="0 0 ${PI/2}" xyz="-.2794 0 0"/>
+      <origin rpy="0 0 ${PI/2}" xyz="0.27967 0 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about x axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -187,7 +187,7 @@
     <joint name="${prefix}wrist_platform_joint" type="revolute">
       <parent link="${prefix}bottom_parallel_link"/>
       <child link="${prefix}wrist_platform_link"/>  <!-- -.348 & -.02746 defined from MTMDaVinci paper and  added -.01 from original to align, -0.02746 defined from CAD file-->
-      <origin rpy="${PI/2} 0 0" xyz="-0.3645 -0.156 0.0"/>
+      <origin rpy="${-PI/2} 0 0" xyz="0.3645 0.1506 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about z axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -198,12 +198,12 @@
     <link name="${prefix}wrist_platform_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristPlatform.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_platform_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristPlatform.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_platform_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -217,12 +217,12 @@
     <link name="${prefix}bottom_parallel_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/BottomArm.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_bottom_parallel_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/BottomArm.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_bottom_parallel_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -236,7 +236,7 @@
     <joint name="${prefix}wrist_pitch_joint" type="revolute">
       <parent link="${prefix}wrist_platform_link"/>
       <child link="${prefix}wrist_pitch_link"/>   <!--rpy="1.57 0 3.14159 " the num .072 & .123 are defined from CAD file -->
-      <origin rpy="${-PI/2} 0 0" xyz="0 0 0"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about x axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -247,12 +247,12 @@
     <link name="${prefix}wrist_pitch_link">
       <visual>        <!-- defined from CAD file (increased in the y dir by .005-->
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristPitch.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_pitch_link.STL"/>
         </geometry>
       </visual>
       <collision>        <!-- defined from CAD file (increased in the y dir by .005-->
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristPitch.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_pitch_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -266,7 +266,7 @@
     <joint name="${prefix}wrist_yaw_joint" type="revolute">
       <parent link="${prefix}wrist_pitch_link"/>
       <child link="${prefix}wrist_yaw_link"/>    <!--  defined from CAD file-->
-      <origin rpy="${PI/2} ${-PI/2} 0" xyz="0 0 0"/>
+      <origin rpy="${-PI/2} ${PI/2} 0" xyz="0 0 0"/>
       <axis xyz="0 0 1"/>
       <!--rotates about z axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -277,12 +277,12 @@
     <link name="${prefix}wrist_yaw_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristYaw.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_yaw_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristYaw.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_yaw_link.STL"/>
         </geometry>
       </collision>
       <inertial>
@@ -296,7 +296,7 @@
     <joint name="${prefix}wrist_roll_joint" type="revolute">
       <parent link="${prefix}wrist_yaw_link"/>
       <child link="${prefix}wrist_roll_link"/>  <!-- -.039 & .055 defined from CAD file-->
-      <origin rpy="${-PI/2} ${PI/2} 0" xyz="0 -.039 0"/>
+      <origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
       <axis xyz="0 0 -1"/>
       <!--rotates about y axis-->
       <!--limit effort and velocity picked arbitrarily check-->
@@ -307,12 +307,12 @@
     <link name="${prefix}wrist_roll_link">
       <visual>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristRoll.dae"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_roll_link.STL"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://dvrk_model/MTM/meshes/WristRoll.STL"/>
+          <mesh filename="package://dvrk_model/MTM/meshes/right_wrist_roll_link.STL"/>
         </geometry>
       </collision>
       <inertial>
