@@ -1,0 +1,28 @@
+<sdf version="1.6">
+  <model name="mtm">
+
+  <include>
+    <uri>model://MTM</uri>
+      <name>MTM</name>
+      <pose> 0 0 0.2 0 0 0</pose>
+  </include>
+
+  <joint name='MTM::rev_joint' type='fixed'>
+   <child>MTM::right_top_panel</child>
+   <parent>world</parent>
+   <axis>
+     <limit>
+       <lower>-1.57</lower>
+       <upper>1.57</upper>
+     </limit>
+     <dynamics>
+       <damping>0</damping>
+     </dynamics>
+     <xyz>0 0 1</xyz>
+   </axis>
+ </joint>
+
+
+ <plugin name='dvrk_plugins' filename='libdvrk_plugins.so'/>
+ </model>
+</sdf>
