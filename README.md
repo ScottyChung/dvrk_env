@@ -5,7 +5,7 @@ This work is unofficial, unsupported and in progress in the current location.
 
 Description
 ====================
-This repository has code for using daVinci research kit on Gazebo 7 and controlled using ROS.
+This repository contains RViz and Gazebo simulations of the da Vinci Surgical System controlled using ROS. 
 
 # Author
 
@@ -17,13 +17,13 @@ Yan Wang: ywang28@wpi.edu
 
 
 # Install
-* download & compile dvrk_gazebo_ros
+* download & compile dvrk_env
 
 ```sh
 # cd to catkin ws src dir
 cd /PATH/TO/CATKIN_WS/src
 # clone repo
-git clone https://github.com/ankur-agrawal/Cart_PSM_ECM.git
+git clone https://github.com/WPI-AIM/dvrk_env.git
 # build
 cd ..
 catkin_make
@@ -42,7 +42,11 @@ dvrk_plugins: Has the model plugin which provides interface between the dvrk sim
 
 laprotek_comm: Provides interface between Laprotek and ROS.
 
-
+# Launching 
+```sh
+# Run the Surgical System simulation
+roslaunch dvrk_gazebo dvrk_gazebo.launch
+```
 # Dependencies
 
 Gazebo 7, ROS kinetic or ROS indigo, gazebo_ros_pkgs. If ROS-indigo is to be used with Gazebo 7, keep gazebo_ros_pkgs (https://github.com/ros-simulation/gazebo_ros_pkgs/tree/indigo-devel) in your src folder.
