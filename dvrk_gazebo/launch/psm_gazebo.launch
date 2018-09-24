@@ -17,6 +17,7 @@
   </include>
 
  <rosparam file="$(find dvrk_gazebo_control)/config/dvrk_psm.yaml" command="load"/>
+ <rosparam file="$(find dvrk_gazebo_control)/config/psm_friction.yaml" command="load"/>
 
 <param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/PSM/psm_launch.sdf'"/>
 

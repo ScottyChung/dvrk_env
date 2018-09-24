@@ -59,7 +59,7 @@ public:
     // setPosition();
   }
   void update();
-
+  void setFriction();
   void SetPosition(const std_msgs::Float64Ptr& msg);
   void setPosition();
 
@@ -79,6 +79,9 @@ private:
   std::string joint_name;
   gazebo::physics::JointPtr jointPtr = 0;
   double p, i, d;
+  double Fv, Fc, Fo, Ia;
+  double velocity;
+  double deadband;
   double joint_pos;
   //bool mode;
   Mode mode;

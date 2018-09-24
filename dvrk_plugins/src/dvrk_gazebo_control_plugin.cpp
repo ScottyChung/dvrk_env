@@ -34,7 +34,6 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
     joint=parent_model->GetJoints()[i];   //Get joint pointer handle
     joint_class* joint_obj= new joint_class(joint, parent_model);
 
-
     std::string joint_name;
 
     joint_obj->name(joint_name); //Get joint name which is compatible with ROS
@@ -106,6 +105,25 @@ void joint_class::update()
   {
     //nothing
   }
+  // Add frictions
+    setFriction();
+}
+
+void joint_class::setFriction() {
+    double force;
+    velocity = jointPtr->GetVelocity(0);
+
+    if (velocity > deadband){
+        force = Fv*velocity + Fc + Fo;
+    }
+    else if(deadband < velocity){
+        force = Fv*velocity - Fc + Fo;
+    }
+    else{
+        force = 0;
+    }
+
+    jointPtr->SetForce(0, -force);
 }
 
 //callback function to set position of the joint
@@ -129,6 +147,8 @@ void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg)
   mode = PositionTarget;
   dynamic_init=0;
   setPositionTarget();
+
+
 }
 
 //callback function to set effort (torque for revolute, force for prismatic) of the joint
@@ -197,13 +217,24 @@ void joint_class::setJointStrings()
   joint_name=joint_name_scoped;
 }
 
-//Read ROS param servers to  get pid values for the postion controller for the particular joint. If no such values are available, they are set to -1.
+//Read ROS param servers to  get pid values for the position controller for the particular joint. If no such values are available, they are set to -1.
 void joint_class::setController()
 {
   double p_def=-1, i_def=-1, d_def=-1;
   model_nh_.param(std::string("/"+joint_name+"_controller/p"), p, p_def);
   model_nh_.param(std::string("/"+joint_name+"_controller/i"), i, i_def);
   model_nh_.param(std::string("/"+joint_name+"_controller/d"), d, d_def);
+
+  double Fc_def=0, Fv_def=0, Fo_def=0, Ia_def=0;
+  model_nh_.param(std::string("/"+joint_name+"/Fc"), Fc, Fc_def);
+  model_nh_.param(std::string("/"+joint_name+"/Fv"), Fv, Fv_def);
+  model_nh_.param(std::string("/"+joint_name+"/Fo"), Fo, Fo_def);
+  model_nh_.param(std::string("/"+joint_name+"/Ia"), Ia, Ia_def);
+
+  deadband = 0.0000001;
+
+  ROS_INFO_STREAM(joint_name << Fv);
+
 }
 
 //Function to access pid values from the private variables of joint class
@@ -230,6 +261,8 @@ void joint_class::setPositionTarget()
   double p, i, d;
   getPID(p, i, d);
   //ROS_INFO("pid: %f, %f, %f", p, i, d);
+
+
 
   if (p<0|| i<0 || d<0)
   {
