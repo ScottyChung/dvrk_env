@@ -28,6 +28,7 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
   //Initializing the publisher topic
   pub_states = model_nh_.advertise<sensor_msgs::JointState>("joint/states", 1000);
 
+  joint_class* counterweight_obj;
 
   for (int i=0;i<num_joints; i++)
   {
@@ -59,19 +60,37 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
 
     joint_obj->setDefaultMode();
 
-    //Biniding subscriber callback functions for additional arguments to be passed in the functions
+    //Binding subscriber callback functions for additional arguments to be passed in the functions
     boost::function<void (const std_msgs::Float64Ptr)>PositionFunc(boost::bind(&joint_class::SetPosition,joint_obj, _1));
-    boost::function<void (const std_msgs::Float64Ptr)>PositionTargetFunc(boost::bind(&joint_class::SetPositionTarget,joint_obj, _1));
     boost::function<void (const std_msgs::Float64Ptr)>ForceFunc(boost::bind(&dvrkGazeboControlPlugin::SetForce,this, _1,joint));
 
     //Initializing the subscriber topic for setting Position, Position Target or Effort
     sub_position[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPosition",1,PositionFunc);
-    sub_positionTarget[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPositionTarget",1,PositionTargetFunc);
     sub_Force[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetEffort",1,ForceFunc);
+
+    if (joint_name.find("counterweight123")!=std::string::npos ) {
+        counterweight_obj = joint_obj;
+    }
+
+    else if ( joint_name.find("main_insertion1234")!=std::string::npos){
+        boost::function<void (const std_msgs::Float64Ptr)>PositionTargetFunc(boost::bind(&joint_class::SetPositionTarget,joint_obj, _1, counterweight_obj));
+        sub_positionTarget[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPositionTarget",1,PositionTargetFunc);
+
+        ROS_INFO_STREAM("GOT HERE :" << joint_name);
+    }
+
+    else {
+        boost::function<void (const std_msgs::Float64Ptr)>PositionTargetFunc(boost::bind(&joint_class::SetPositionTarget,joint_obj, _1));
+        sub_positionTarget[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPositionTarget",1,PositionTargetFunc);
+        ROS_INFO_STREAM("GOT THERE :" << joint_name);
+    }
+
 
     // joint_obj.setPositionTarget();
     this->updateConnection[i] = gazebo::event::Events::ConnectWorldUpdateBegin(boost::bind(&joint_class::update, joint_obj));
     this->updateStates = gazebo::event::Events::ConnectWorldUpdateEnd(boost::bind(&dvrkGazeboControlPlugin::PublishStates,this));
+
+
   }
   // this->PublishStates(); //Publish the read values from Gazebo to ROS
 }
@@ -140,7 +159,18 @@ void joint_class::SetPosition(const std_msgs::Float64Ptr& msg)
 }
 
 //callback function to set target position and use the pid controller in Gazebo. pid values are specified through the rosparam server
-void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg)
+void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg )
+{
+    joint_pos=msg->data;
+    //mode=1;
+    mode = PositionTarget;
+    dynamic_init=0;
+    setPositionTarget();
+
+
+}
+
+void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg, joint_class* joint2)
 {
   joint_pos=msg->data;
   //mode=1;
@@ -148,8 +178,16 @@ void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg)
   dynamic_init=0;
   setPositionTarget();
 
+  // Counterweight scale
+  double scale = 0.568;
 
+  joint2->joint_pos=msg->data* scale;
+  //mode=1;
+  joint2->mode = PositionTarget;
+  joint2->dynamic_init=0;
+  joint2->setPositionTarget();
 }
+
 
 //callback function to set effort (torque for revolute, force for prismatic) of the joint
 void dvrkGazeboControlPlugin::SetForce(const std_msgs::Float64Ptr& msg, gazebo::physics::JointPtr joint)
@@ -233,7 +271,7 @@ void joint_class::setController()
 
   deadband = 0.0000001;
 
-  ROS_INFO_STREAM(joint_name << Fv);
+  //ROS_INFO_STREAM(joint_name << " " <<  Fv);
 
 }
 

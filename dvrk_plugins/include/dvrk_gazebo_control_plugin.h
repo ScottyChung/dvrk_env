@@ -39,6 +39,9 @@ private:
   gazebo::event::ConnectionPtr updateStates;
   // ros::Subscriber sub_clock;
   int num_joints;
+
+
+
 protected:
   ros::NodeHandle model_nh_;
   gazebo::physics::ModelPtr parent_model;
@@ -58,12 +61,14 @@ public:
     dynamic_init=0;
     // setPosition();
   }
+
   void update();
   void setFriction();
   void SetPosition(const std_msgs::Float64Ptr& msg);
   void setPosition();
 
   void SetPositionTarget(const std_msgs::Float64Ptr& msg);
+  void SetPositionTarget(const std_msgs::Float64Ptr& msg, joint_class* joint2);
   void setPositionTarget();
 
   void clock_cb(const rosgraph_msgs::Clock msg);

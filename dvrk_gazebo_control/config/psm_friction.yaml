@@ -1,57 +1,57 @@
 dvrk_psm:
   PSM1:
-    yaw_joint:
-      Fc: 0.005010
-      Fv: 0.075572
-      Fo: 0.045700
+    yaw_Link:
+      Fc: 0.001500
+      Fv: 0.120696
+      Fo: -1.000006
       Ia: 0
-    pitch_back_joint:
-      Fc: 0.000954
-      Fv: 0.032969
-      Fo: 0.027759
+    pitch_back_Link:
+      Fc: 0.001618
+      Fv: 0.036443
+      Fo: -0.159783
       Ia: 0
-    pitch_front_joint:
-      Fc: 0.000954
-      Fv: 0.032969
-      Fo: 0.027759
+    pitch_front_Link:
+      Fc: 0.001618
+      Fv: 0.036443
+      Fo: -0.159783
       Ia: 0
-    pitch_bottom_joint:
-      Fc: 0.000954
-      Fv: 0.032969
-      Fo: -0.027759
+    pitch_bottom_Link:
+      Fc: 0.001618
+      Fv: 0.036443
+      Fo: 0.159783
       Ia: 0
-    pitch_top_joint:
-      Fc: 0.000954
-      Fv: 0.032969
-      Fo: -0.027759
+    pitch_top_Link:
+      Fc: 0.001618
+      Fv: 0.036443
+      Fo: 0.159783
       Ia: 0
-    pitch_end_joint:
-      Fc: 0.000954
-      Fv: 0.032969
-      Fo: 0.027759
+    pitch_end_Link:
+      Fc: 0.001618
+      Fv: 0.036443
+      Fo: -0.159783
       Ia: 0
-    main_insertion_joint:
+    main_insertion_Link:
       Fc: 0.001001
-      Fv: 1.238423
-      Fo: -0.080644
+      Fv: 0.585625
+      Fo: -0.849800
       Ia: 0
-    counterweight:
-      Fc: 0.494572
-      Fv: 1.000076
-      Fo: 1.000082
+    counterweight_Link:
+      Fc: 0.084287
+      Fv: 1.000009
+      Fo: 1.000010
       Ia: 0
-    tool_roll_joint:
-      Fc: 0.000479
-      Fv: 0.004159
-      Fo: -0.006116
-      Ia: -0.000006
-    tool_pitch_joint:
-      Fc: 0.006207
-      Fv: 0.031091
-      Fo: 0.005990
-      Ia: 0.015497
-    tool_yaw_joint:
-      Fc: 0.021940
-      Fv: 0.002190
-      Fo: -0.019122
-      Ia: 0.007747
+    tool_roll_link:
+      Fc: 0.000592
+      Fv: 0.003829
+      Fo: -0.006079
+      Ia: 0.000129
+    tool_pitch_link:
+      Fc: 0.006995
+      Fv: 0.029111
+      Fo: 0.006498
+      Ia: 0.025358
+    tool_yaw_link:
+      Fc: 0.031978
+      Fv: -0.013046
+      Fo: -0.018355
+      Ia: 0.012636
