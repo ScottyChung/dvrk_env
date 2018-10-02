@@ -1,57 +1,57 @@
-dvrk_psm:
-  PSM1:
-    yaw_Link:
-      Fc: 0.001500
-      Fv: 0.120696
-      Fo: -1.000006
+dvrk_psm: 
+  PSM1: 
+    yaw_Link: 
+      Fc: 0.000981
+      Fv: 0.071725
+      Fo: -0.323603
       Ia: 0
-    pitch_back_Link:
-      Fc: 0.001618
-      Fv: 0.036443
-      Fo: -0.159783
+    pitch_back_Link: 
+      Fc: 0.001040
+      Fv: 0.039617
+      Fo: -0.048863
       Ia: 0
-    pitch_front_Link:
-      Fc: 0.001618
-      Fv: 0.036443
-      Fo: -0.159783
+    pitch_front_Link: 
+      Fc: 0.001040
+      Fv: 0.039617
+      Fo: -0.048863
       Ia: 0
-    pitch_bottom_Link:
-      Fc: 0.001618
-      Fv: 0.036443
-      Fo: 0.159783
+    pitch_bottom_Link: 
+      Fc: 0.001040
+      Fv: 0.039617
+      Fo: 0.048863
       Ia: 0
-    pitch_top_Link:
-      Fc: 0.001618
-      Fv: 0.036443
-      Fo: 0.159783
+    pitch_top_Link: 
+      Fc: 0.001040
+      Fv: 0.039617
+      Fo: 0.048863
       Ia: 0
-    pitch_end_Link:
-      Fc: 0.001618
-      Fv: 0.036443
-      Fo: -0.159783
+    pitch_end_Link: 
+      Fc: 0.001040
+      Fv: 0.039617
+      Fo: -0.048863
       Ia: 0
-    main_insertion_Link:
-      Fc: 0.001001
-      Fv: 0.585625
-      Fo: -0.849800
+    main_insertion_Link: 
+      Fc: 0.001000
+      Fv: 0.655385
+      Fo: 0.364521
       Ia: 0
-    counterweight_Link:
-      Fc: 0.084287
-      Fv: 1.000009
-      Fo: 1.000010
+    counterweight_Link: 
+      Fc: 0.149625
+      Fv: 1.000001
+      Fo: 0.672538
       Ia: 0
-    tool_roll_link:
-      Fc: 0.000592
-      Fv: 0.003829
-      Fo: -0.006079
-      Ia: 0.000129
-    tool_pitch_link:
-      Fc: 0.006995
-      Fv: 0.029111
-      Fo: 0.006498
-      Ia: 0.025358
-    tool_yaw_link:
-      Fc: 0.031978
-      Fv: -0.013046
-      Fo: -0.018355
-      Ia: 0.012636
+    tool_roll_link: 
+      Fc: 0.000706
+      Fv: 0.003497
+      Fo: -0.006042
+      Ia: 0.000265
+    tool_pitch_link: 
+      Fc: 0.007776
+      Fv: 0.027151
+      Fo: 0.007003
+      Ia: 0.035126
+    tool_yaw_link: 
+      Fc: 0.033104
+      Fv: -0.006823
+      Fo: -0.018111
+      Ia: 0.017557

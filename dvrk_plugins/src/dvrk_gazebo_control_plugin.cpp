@@ -68,15 +68,17 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
     sub_position[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPosition",1,PositionFunc);
     sub_Force[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetEffort",1,ForceFunc);
 
-    if (joint_name.find("counterweight123")!=std::string::npos ) {
+    if (joint_name.find("counterweight")!=std::string::npos ) {
         counterweight_obj = joint_obj;
+
+        ROS_INFO_STREAM("GOT Counterweight:" << joint_name);
     }
 
-    else if ( joint_name.find("main_insertion1234")!=std::string::npos){
+    else if ( joint_name.find("main_insertion")!=std::string::npos){
         boost::function<void (const std_msgs::Float64Ptr)>PositionTargetFunc(boost::bind(&joint_class::SetPositionTarget,joint_obj, _1, counterweight_obj));
         sub_positionTarget[i] = model_nh_.subscribe<std_msgs::Float64>("/"+joint_name+"/SetPositionTarget",1,PositionTargetFunc);
 
-        ROS_INFO_STREAM("GOT HERE :" << joint_name);
+        ROS_INFO_STREAM("GOT INSERTION :" << joint_name);
     }
 
     else {
@@ -178,8 +180,10 @@ void joint_class::SetPositionTarget(const std_msgs::Float64Ptr& msg, joint_class
   dynamic_init=0;
   setPositionTarget();
 
+  ROS_INFO_STREAM("GOT INSIDE HERE");
+
   // Counterweight scale
-  double scale = 0.568;
+  double scale = 0.6025;
 
   joint2->joint_pos=msg->data* scale;
   //mode=1;
