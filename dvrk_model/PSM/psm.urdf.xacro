@@ -42,7 +42,7 @@
       <material
         name="">
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.64706 0.61961 0.58824 1" />
       </material>
     </visual>
     <collision>
@@ -82,7 +82,7 @@
       <material
         name="">
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.64706 0.61961 0.58824 1" />
       </material>
     </visual>
     <collision>
@@ -139,8 +139,10 @@
       </geometry>
       <material
         name="">
+        <!--color
+          rgba="0.89804 0.91765 0.92941 1" /-->
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.25098 0.25098 0.25098 1" />
       </material>
     </visual>
     <collision>
@@ -198,8 +200,10 @@
       </geometry>
       <material
         name="">
+        <!--color
+          rgba="0.89804 0.91765 0.92941 1" /-->
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.25098 0.25098 0.25098 1" />
       </material>
     </visual>
     <collision>
@@ -257,8 +261,10 @@
       </geometry>
       <material
         name="">
+        <!--color
+          rgba="0.89804 0.91765 0.92941 1" /-->
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.64706 0.61961 0.58824 1" />
       </material>
     </visual>
     <collision>
@@ -316,8 +322,10 @@
       </geometry>
       <material
         name="">
-        <color
-          rgba="1 0.55686 0.058824 0.4" />
+        <!--color
+          rgba="1 0.55686 0.058824 0.4" /-->
+          <color
+          rgba="0.89804 0.91765 0.92941 1" />
       </material>
     </visual>
     <collision>
@@ -347,7 +355,6 @@
       upper="0.24"
       effort="1000"
 	  velocity="1" />
-
   </joint>
   <link
     name="${prefix}tool_roll_link">
@@ -667,8 +674,10 @@
       </geometry>
       <material
         name="">
+        <!--color
+          rgba="0.89804 0.91765 0.92941 1" /-->
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.25098 0.25098 0.25098 1" />  
       </material>
     </visual>
     <collision>
@@ -726,8 +735,10 @@
       </geometry>
       <material
         name="">
+        <!--color
+          rgba="0.89804 0.91765 0.92941 1" /-->
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+            rgba="0.25098 0.25098 0.25098 1" />  
       </material>
     </visual>
     <collision>
