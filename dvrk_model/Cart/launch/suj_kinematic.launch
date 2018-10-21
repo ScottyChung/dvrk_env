@@ -6,10 +6,10 @@
     name="gui"
     default="true" />
 
- <arg name="rvizconfig" default="$(find dvrk_model)/rviz/psm_ecm.rviz" />
+ <arg name="rvizconfig" default="$(find dvrk_model)/rviz/SUJ.rviz" />
   <param
     name="robot_description"
-    command="$(find xacro)/xacro.py $(find dvrk_model)/dvrk/psm_ecm.urdf" />
+    command="$(find xacro)/xacro.py $(find dvrk_model)/Cart/suj.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -27,6 +27,9 @@
     type="rviz"
     args="-d $(arg rvizconfig)"
     required="true"    />
+
+ <node pkg="dvrk_model" type="Suj.py"
+          name="broadcaster_fixed" />
 
 <!--d $(find Cart)/urdf.rviz" -->
 

@@ -709,6 +709,67 @@
 	  velocity="10" />
     <mimic joint="${prefix}pitch_back_joint" multiplier="-1"/>
   </joint>
+
+  <link
+    name="${prefix}counterweight_Link">
+    <inertial>
+      <origin
+        xyz="0.00864945005675316 -7.99999995084467E-07 -0.0428319993376596"
+        rpy="0 0 0" />
+      <mass
+        value="0.0572294566812767" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/counterweight_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/counterweight_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}counterweight_joint"
+    type="prismatic">
+    <origin
+      xyz="0.028665 -0.095804 0"
+      rpy="1.5708 0 1.8615" />
+    <parent
+      link="${prefix}pitch_back_Link" />
+    <child
+      link="${prefix}counterweight_Link" />
+    <axis
+      xyz="0 0 1" />
+    <mimic joint="${prefix}main_insertion_joint" multiplier="0.605"/>
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+	  velocity="10" />
+  </joint>
+
   <link
     name="${prefix}pitch_front_Link">
     <inertial>

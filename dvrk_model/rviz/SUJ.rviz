@@ -7,17 +7,29 @@ Panels:
         - /Global Options1
         - /Status1
         - /Grid1/Offset1
-        - /RobotModel1
         - /RobotModel1/Links1
         - /RobotModel1/Links1/SUJ_ECM_L01
         - /RobotModel1/Links1/SUJ_ECM_L11
         - /RobotModel1/Links1/SUJ_ECM_L21
+        - /RobotModel1/Links1/SUJ_ECM_L31
+        - /RobotModel1/Links1/SUJ_PSM1_L01
+        - /RobotModel1/Links1/SUJ_PSM1_L11
+        - /RobotModel1/Links1/SUJ_PSM1_L21
+        - /RobotModel1/Links1/SUJ_PSM1_L31
+        - /RobotModel1/Links1/SUJ_PSM1_L41
+        - /RobotModel1/Links1/SUJ_PSM2_L01
+        - /RobotModel1/Links1/SUJ_PSM2_L11
+        - /RobotModel1/Links1/SUJ_PSM2_L21
+        - /RobotModel1/Links1/SUJ_PSM2_L31
+        - /RobotModel1/Links1/SUJ_PSM2_L41
+        - /RobotModel1/Links1/SUJ_PSM3_L01
+        - /RobotModel1/Links1/SUJ_PSM3_L11
+        - /RobotModel1/Links1/SUJ_PSM3_L21
+        - /RobotModel1/Links1/SUJ_PSM3_L31
+        - /RobotModel1/Links1/SUJ_PSM3_L41
         - /RobotModel1/Links1/base_link1
         - /TF1
-        - /TF1/Frames1
         - /TF1/Frames1/ECM_01
-        - /TF1/Frames1/PSM1_base_link1
-        - /TF1/Frames1/base_link1
         - /TF1/Frames1/base_link1/Position1
         - /TF1/Tree1
       Splitter Ratio: 0.641379297
@@ -48,7 +60,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.0299999993
         Value: Lines
@@ -61,7 +73,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: world
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -349,7 +361,7 @@ Visualization Manager:
           Show Trail: false
           Value: false
         SUJ_ECM_L0:
-          Alpha: 1
+          Alpha: 0.5
           Show Axes: false
           Show Trail: false
           Value: true
@@ -369,22 +381,22 @@ Visualization Manager:
           Show Trail: false
           Value: true
         SUJ_PSM1_L0:
-          Alpha: 1
+          Alpha: 0.5
           Show Axes: false
           Show Trail: false
           Value: true
         SUJ_PSM1_L1:
-          Alpha: 1
+          Alpha: 0.5
           Show Axes: false
           Show Trail: false
           Value: true
         SUJ_PSM1_L2:
-          Alpha: 1
+          Alpha: 0.5
           Show Axes: false
           Show Trail: false
           Value: true
         SUJ_PSM1_L3:
-          Alpha: 1
+          Alpha: 0.5
           Show Axes: false
           Show Trail: false
           Value: true
@@ -394,55 +406,55 @@ Visualization Manager:
           Show Trail: false
           Value: true
         SUJ_PSM2_L0:
-          Alpha: 1
+          Alpha: 0.300000012
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM2_L1:
-          Alpha: 1
+          Alpha: 0.300000012
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM2_L2:
-          Alpha: 1
+          Alpha: 0.300000012
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM2_L3:
-          Alpha: 1
+          Alpha: 0.300000012
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM2_L4:
-          Alpha: 1
+          Alpha: 0.300000012
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM3_L0:
-          Alpha: 1
+          Alpha: 0.100000001
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM3_L1:
-          Alpha: 1
+          Alpha: 0.100000001
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM3_L2:
-          Alpha: 1
+          Alpha: 0.100000001
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM3_L3:
-          Alpha: 1
+          Alpha: 0.100000001
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         SUJ_PSM3_L4:
-          Alpha: 1
+          Alpha: 0.100000001
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
@@ -476,9 +488,9 @@ Visualization Manager:
         ECM_5:
           Value: true
         ECM_6:
-          Value: true
+          Value: false
         ECM_Tip:
-          Value: true
+          Value: false
         ECM__base_link:
           Value: false
         ECM__end_link:
@@ -518,7 +530,7 @@ Visualization Manager:
         PSM1_Tip:
           Value: false
         PSM1_base_link:
-          Value: true
+          Value: false
         PSM1_counterweight_Link:
           Value: false
         PSM1_main_insertion_Link:
@@ -849,25 +861,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.88678861
+      Distance: 2.91938186
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.831692278
-        Y: 0.123745337
-        Z: 0.984636068
+        X: -0.0389598608
+        Y: -0.269533634
+        Z: 0.960298002
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.575915098
+      Pitch: 0.269691616
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.59223771
+      Yaw: 2.66326261
     Saved: ~
 Window Geometry:
   Displays:
@@ -885,5 +897,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1855
-  X: 189
-  Y: 97
+  X: 279
+  Y: 161
