@@ -9,7 +9,6 @@ Panels:
         - /Grid1
         - /Grid1/Offset1
         - /RobotModel1
-        - /RobotModel1/Links1
         - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
@@ -188,16 +187,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.52669251
+      Distance: 0.541144967
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.233266592
-        Y: 0.0645788163
-        Z: 0.107534438
+        X: 0.169726416
+        Y: 0.429870754
+        Z: -0.127656236
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false

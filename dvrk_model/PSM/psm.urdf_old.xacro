@@ -19,7 +19,7 @@
     name="${prefix}base_link">
     <inertial>
       <origin
-        xyz="-1.21879973801818E-08 -0.170155334863205 -0.0856068339372725"
+        xyz="-1.2188E-08 -0.17016 -0.085607"
         rpy="0 0 0" />
       <mass
         value="2.0161" />
@@ -59,7 +59,7 @@
     name="${prefix}yaw_Link">
     <inertial>
       <origin
-        xyz="-0.0387688268954193 7.84810687559308E-05 0.0415960702785889"
+        xyz="-0.038769 7.8481E-05 0.041596"
         rpy="0 0 0" />
       <mass
         value="1.4705" />
@@ -117,7 +117,7 @@
     name="${prefix}pitch_back_Link">
     <inertial>
       <origin
-        xyz="-0.0118964505127211 -0.0265475546345839 3.91913895763848E-05"
+        xyz="-0.011651 -0.036241 3.5576E-05"
         rpy="0 0 0" />
       <mass
         value="0.98494" />
@@ -178,7 +178,7 @@
     name="${prefix}pitch_bottom_Link">
     <inertial>
       <origin
-        xyz="0.256832099418306 -0.0103480348654005 -6.17918787979378E-06"
+        xyz="0.25683 -0.010348 -6.1792E-06"
         rpy="0 0 0" />
       <mass
         value="0.44569" />
@@ -221,7 +221,7 @@
     type="revolute">
     <origin
       xyz="0.15 0 0"
-      rpy="0 0 1.8414" />
+      rpy="0 0 1.8615" />
     <parent
       link="${prefix}pitch_back_Link" />
     <child
@@ -239,7 +239,7 @@
     name="${prefix}pitch_end_Link">
     <inertial>
       <origin
-        xyz="-0.00208377159655859 -0.136865261464316 -5.99193421875518E-08"
+        xyz="-0.0019293 -0.13613 -5.9688E-08"
         rpy="0 0 0" />
       <mass
         value="2.091" />
@@ -282,7 +282,7 @@
     type="revolute">
     <origin
       xyz="0.516 0 0"
-      rpy="0 0 -2.259E-13" />
+      rpy="0 0 -3.5146E-13" />
     <parent
       link="${prefix}pitch_bottom_Link" />
     <child
@@ -300,7 +300,7 @@
     name="${prefix}main_insertion_Link">
     <inertial>
       <origin
-        xyz="0.00365284199041505 -0.000109340705170993 0.0103494974139096"
+        xyz="0.0040563 -0.00010934 0.0098616"
         rpy="0 0 0" />
       <mass
         value="0.22491" />
@@ -315,7 +315,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy=" 0 0 1.5708" />
       <geometry>
         <mesh
           filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL" />
@@ -342,8 +342,8 @@
     name="${prefix}main_insertion_joint"
     type="prismatic">
     <origin
-      xyz="0.04009 -0.28726 0"
-      rpy="1.5708 0 -3.1416" />
+      xyz="0.043 -0.28809 0"
+      rpy="1.5708 1.5708 3.1416" />
     <parent
       link="${prefix}pitch_end_Link" />
     <child
@@ -360,7 +360,7 @@
     name="${prefix}tool_roll_link">
     <inertial>
       <origin
-        xyz="-1.13105868004837E-08 -7.45590245575551E-09 -0.00582338133540755"
+        xyz="-1.1313E-08 -7.4597E-09 -0.0058234"
         rpy="0 0 0" />
       <mass
         value="0.00033225" />
@@ -400,8 +400,8 @@
     name="${prefix}tool_roll_joint"
     type="revolute">
     <origin
-      xyz="0 0 0.4169"
-      rpy="4.0037E-15 1.9248E-14 3.1416" />
+      xyz="0 0 0.4162"
+      rpy="0 0 -1.5708" />
     <parent
       link="${prefix}main_insertion_Link" />
     <child
@@ -418,7 +418,7 @@
     name="${prefix}tool_pitch_link">
     <inertial>
       <origin
-        xyz="0.00357661239153936 -4.86748956375349E-05 4.44129527829062E-06"
+        xyz="0.0035763 -7.363E-08 4.4763E-06"
         rpy="0 0 0" />
       <mass
         value="0.00025784" />
@@ -459,7 +459,7 @@
     type="revolute">
     <origin
       xyz="0 0 0"
-      rpy="1.5708 -1.5708 0" />
+      rpy="1.5708 -1.5708 3.1416" />
     <parent
       link="${prefix}tool_roll_link" />
     <child
@@ -476,7 +476,7 @@
     name="${prefix}tool_yaw_link">
     <inertial>
       <origin
-        xyz="1.08385669535061E-15 1.96509475358653E-14 -5.00000009627799E-05"
+        xyz="-1.0567E-14 -2.3287E-14 -5E-05"
         rpy="0 0 0" />
       <mass
         value="6.6366E-06" />
@@ -516,8 +516,8 @@
     name="${prefix}tool_yaw_joint"
     type="revolute">
     <origin
-      xyz="0.0091 -5E-05 0"
-      rpy="1.5708 1.5708 3.14159" />
+      xyz="0.0091 0 0"
+      rpy="1.5708 -1.5708 3.1416" />
     <parent
       link="${prefix}tool_pitch_link" />
     <child
@@ -534,7 +534,7 @@
     name="${prefix}tool_gripper1_link">
     <inertial>
       <origin
-        xyz="0.000188736724875802 0.00135264310277733 -0.000866946464161744"
+        xyz="0.00019605 0.001435 -0.00088478"
         rpy="0 0 0" />
       <mass
         value="3.7467E-05" />
@@ -549,7 +549,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0  0 3.14159" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://dvrk_model/PSM/meshes/tool_gripper1_link.STL" />
@@ -594,7 +594,7 @@
     name="${prefix}tool_gripper2_link">
     <inertial>
       <origin
-        xyz="-0.000188736724875321 0.00135264310278649 0.000866946462221629"
+        xyz="-0.00019605 0.001435 0.00088478"
         rpy="0 0 0" />
       <mass
         value="3.7467E-05" />
@@ -609,7 +609,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 3.14159" />
+        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://dvrk_model/PSM/meshes/tool_gripper2_link.STL" />
@@ -652,7 +652,7 @@
     name="${prefix}pitch_top_Link">
     <inertial>
       <origin
-        xyz="0.312459561160128 -0.000565655662835396 -3.41314861125328E-07"
+        xyz="0.31246 -0.00056566 -3.4131E-07"
         rpy="0 0 0" />
       <mass
         value="0.17841" />
@@ -694,8 +694,8 @@
     name="${prefix}pitch_top_joint"
     type="revolute">
     <origin
-      xyz="0.18669 0.010178 0"
-      rpy="0 0 1.8414" />
+      xyz="0.18366 0.014121 0"
+      rpy="0 0 1.8615" />
     <parent
       link="${prefix}pitch_back_Link" />
     <child
@@ -714,7 +714,7 @@
     name="${prefix}counterweight_Link">
     <inertial>
       <origin
-        xyz="0.0316599999999702 -7.99999997744384E-07 -0.00646749776355618"
+        xyz="0.00864945005675316 -7.99999995084467E-07 -0.0428319993376596"
         rpy="0 0 0" />
       <mass
         value="0.0572294566812767" />
@@ -754,8 +754,8 @@
     name="${prefix}counterweight_joint"
     type="prismatic">
     <origin
-      xyz="0.026727 -0.096362 0"
-      rpy="1.5708 0 1.8414" />
+      xyz="0.028665 -0.095804 0"
+      rpy="1.5708 0 1.8615" />
     <parent
       link="${prefix}pitch_back_Link" />
     <child
@@ -774,7 +774,7 @@
     name="${prefix}pitch_front_Link">
     <inertial>
       <origin
-        xyz="0.0962686548282796 -1.05637720793084E-13 0.0475509864128348"
+        xyz="0.096269 1.1116E-12 0.047551"
         rpy="0 0 0" />
       <mass
         value="0.074425" />
@@ -817,8 +817,8 @@
     name="${prefix}pitch_front_joint"
     type="revolute">
     <origin
-      xyz="0 0 -0.0664000000000003"
-      rpy="-1.57079632679489 -0.270555392516492 1.77865254633244E-15" />
+      xyz="0 0 -0.0664"
+      rpy="-1.5708 -0.29073 1.7787E-15" />
     <parent
       link="${prefix}yaw_Link" />
     <child
