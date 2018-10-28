@@ -1,15 +1,15 @@
 dvrk_psm:
   PSM1:
     yaw_joint_controller:
-      p: 800
+      p: 30
       i: 0.1
       d: 10
     pitch_back_joint_controller:
-      p: 800
+      p: 40
       i: 0.1
-      d: 30
+      d: 20
     main_insertion_joint_controller:
-      p: 600
+      p: 150
       i: 0.01
       d: 10
     tool_roll_joint_controller:
@@ -25,10 +25,10 @@ dvrk_psm:
       i: 0.1
       d: 1
     tool_gripper1_joint_controller:
-      p: 100
+      p: 10
       i: 0.1
       d: 1
     tool_gripper2_joint_controller:
-      p: 100
+      p: 10
       i: 0.1
       d: 1

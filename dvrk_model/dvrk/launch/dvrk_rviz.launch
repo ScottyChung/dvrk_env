@@ -16,7 +16,10 @@
   <node
     name="joint_state_publisher"
     pkg="joint_state_publisher"
-    type="joint_state_publisher" />
+    type="joint_state_publisher"> 
+    <rosparam param="source_list">["set_joint"]</rosparam>
+    </node>
+
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"

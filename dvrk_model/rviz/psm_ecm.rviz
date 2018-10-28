@@ -14,6 +14,9 @@ Panels:
         - /RobotModel1/Links1/ECM__pitch_top_link1
         - /RobotModel1/Links1/ECM__tool_link1
         - /RobotModel1/Links1/ECM__yaw_link1
+        - /RobotModel1/Links1/PSM3_main_insertion_Link1
+        - /RobotModel1/Links1/PSM3_pitch_back_Link1
+        - /RobotModel1/Links1/PSM3_yaw_Link1
         - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
@@ -134,12 +137,12 @@ Visualization Manager:
           Show Trail: false
           Value: false
         PSM3_main_insertion_Link:
-          Alpha: 0.5
+          Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
         PSM3_pitch_back_Link:
-          Alpha: 0.800000012
+          Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
@@ -149,7 +152,7 @@ Visualization Manager:
           Show Trail: false
           Value: false
         PSM3_pitch_end_Link:
-          Alpha: 0.800000012
+          Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
@@ -159,7 +162,7 @@ Visualization Manager:
           Show Trail: false
           Value: false
         PSM3_pitch_top_Link:
-          Alpha: 0.5
+          Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
@@ -193,7 +196,7 @@ Visualization Manager:
           Show Trail: false
           Value: false
         PSM3_yaw_Link:
-          Alpha: 0.200000003
+          Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
@@ -346,9 +349,9 @@ Visualization Manager:
   Views:
     Current:
       Centre:
-        X: 0.0848305374
-        Y: 1.11932349
-        Z: 1.16765916
+        X: 0.172894344
+        Y: 1.16990948
+        Z: 1.28986537
       Class: rviz_ortho_view_controller/Ortho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -359,12 +362,12 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.00999999978
       Orientation:
-        W: -0.429593712
-        X: -0.558640122
-        Y: -0.405883402
-        Z: -0.582191765
+        W: 0.347316921
+        X: 0.291370958
+        Y: -0.553642988
+        Z: -0.698836803
       Plane: none
-      Scale: 920.33075
+      Scale: 953.482178
       Target Frame: <Fixed Frame>
       Value: Ortho (rviz_ortho_view_controller)
     Saved:
