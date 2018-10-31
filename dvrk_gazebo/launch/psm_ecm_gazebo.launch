@@ -16,9 +16,9 @@
     <arg name="verbose" value="true" />
   </include>
 
- <rosparam file="$(find dvrk_gazebo_control)/config/test_psm.yaml" command="load"/>
+ <rosparam file="$(find dvrk_gazebo_control)/config/dvrk_psm_ecm.yaml" command="load"/>
 
-<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/PSM/psm_launch.sdf'"/>
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/PSM/psm_ecm_launch.sdf'"/>
 
 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
 args="-sdf -model dvrk_psm -param robot_description"/>

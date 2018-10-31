@@ -51,7 +51,11 @@ include_directories( ${Boost_INCLUDE_DIR} )
 include_directories(${catkin_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS})
 include_directories(include)
 
-add_executable(trajectory_control src/trajectory_control.cpp)
+add_library(trajectory_control  src/trajectory_control.cpp include/trajectory_control.h)
+target_link_libraries(trajectory_control ${catkin_LIBRARIES})
+
+add_executable(run_trajectory src/run_trajectory.cpp)
+target_link_libraries(run_trajectory trajectory_control)
 # add_executable(psm src/psm.cpp)
 
 # add_library( dvrk_library SHARED src/dvrk_library.cpp )

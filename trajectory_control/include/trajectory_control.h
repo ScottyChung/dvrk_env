@@ -28,6 +28,8 @@
 
 class trajectory_control{
 private:
+    std::string manipulator_name;
+    std::string robot_namespace;
   bool subscribed;
   std::vector<ros::Publisher> psmPub;
   std::vector<std_msgs::Float64> cur_joints, cmd_joints;
@@ -42,11 +44,11 @@ private:
   // std::vector<Float64> v;
 public:
   Eigen::Matrix4d psm_base, psm_end, base_rcm;
-  trajectory_control(){
-    init();
+  trajectory_control(std::string robot_namespace, std::string manipulator_name){
+    init(robot_namespace, manipulator_name);
   };
 
-  void init();
+  void init(std::string robot_namespace, std::string manipulator_name);
   void LinkStateToEigen(Eigen::Matrix4d &mat, const geometry_msgs::Pose msg);
   void getBaseTransforms(const gazebo_msgs::LinkStatesPtr &msg);
   void getCurrentJoints(const sensor_msgs::JointStatePtr &msg);
