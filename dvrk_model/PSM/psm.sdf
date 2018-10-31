@@ -789,5 +789,14 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+
+    <link name='end_effector_Link'>
+      <pose frame=''>2e-06 0.486403 0.00651 -1.57078 0 1.57078</pose>
+    </link>
+
+    <joint name='end_joint' type='fixed'>
+      <child>end_effector_Link</child>
+      <parent>tool_gripper2_link</parent>
+    </joint>
   </model>
 </sdf>

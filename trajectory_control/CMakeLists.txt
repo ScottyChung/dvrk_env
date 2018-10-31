@@ -56,7 +56,8 @@ target_link_libraries(trajectory_control ${catkin_LIBRARIES})
 
 add_executable(run_trajectory src/run_trajectory.cpp)
 target_link_libraries(run_trajectory trajectory_control)
-# add_executable(psm src/psm.cpp)
+
+add_executable(trajectory_control_cartesian src/trajectory_control_cartesian.cpp)
 
 # add_library( dvrk_library SHARED src/dvrk_library.cpp )
 
@@ -67,11 +68,13 @@ target_link_libraries(run_trajectory trajectory_control)
 target_link_libraries(trajectory_control
    ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${sawRobotIO1394_LIBRARIES}
  )
-# target_link_libraries(ecm
-#   ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${sawRobotIO1394_LIBRARIES}
-# )
+target_link_libraries(trajectory_control_cartesian
+   ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${sawRobotIO1394_LIBRARIES}
+ )
+
 cisst_target_link_libraries (trajectory_control ${REQUIRED_CISST_LIBRARIES})
-# cisst_target_link_libraries (dvrk_library ${REQUIRED_CISST_LIBRARIES})
+
+cisst_target_link_libraries (trajectory_control_cartesian ${REQUIRED_CISST_LIBRARIES})
 
 # set_target_properties(dvrk_library PROPERTIES PREFIX ""
 #  # LIBRARY_OUTPUT_DIRECTORY /usr/lib/python2.7/dist-packages)
