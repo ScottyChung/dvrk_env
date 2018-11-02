@@ -798,5 +798,16 @@
       <child>end_effector_Link</child>
       <parent>tool_gripper2_link</parent>
     </joint>
+
+    <link name='rcm_Link'>
+      <pose frame=''>2e-06 0.486403 0 0 0 0</pose>
+    </link>
+
+    <joint name='rcm_joint' type='fixed'>
+      <child>rcm_Link</child>
+      <parent>base_link</parent>
+    </joint>
+
+
   </model>
 </sdf>
