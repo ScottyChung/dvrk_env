@@ -6,6 +6,26 @@
     name="gui"
     default="true" />
 
+ <rosparam>
+    zeros:
+      suj_psm1_J0:  0.32
+      suj_psm1_J1: -0.42
+      suj_psm1_J2: -1.54
+      suj_psm1_J3: -0.42
+      suj_psm1_J4: -1.43
+      suj_psm2_J0:  0.23
+      suj_psm2_J1:  0.28
+      suj_psm2_J2:  1.20
+      suj_psm2_J3:  0.88
+      suj_psm2_J4:  1.57
+      suj_ecm_J0:   0.34
+      suj_ecm_J1:  -1.13
+      suj_ecm_J2:   2.24
+      suj_ecm_J3:  -1.11
+      psm1_rev_joint:  1.48
+      psm2_rev_joint: -0.85
+ </rosparam>
+ 
  <arg name="rvizconfig" default="$(find dvrk_description)/rviz/dvrk.rviz" />
   <param
     name="robot_description"
