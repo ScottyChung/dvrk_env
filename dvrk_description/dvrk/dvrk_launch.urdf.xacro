@@ -12,7 +12,7 @@
 <property name= "ecm_num_1" value = "true" />
 <property name= "psm_num_1" value = "true" />
 <property name= "psm_num_2" value = "true" />
-<property name= "psm_num_3" value = "true"  />
+<property name= "psm_num_3" value = "false"  />
 
 
 
