@@ -9,10 +9,10 @@
 
 
 <!--change true to specify which psm or ecm you want -->
-<property name= "ecm_num_1" value = "true" />
-<property name= "psm_num_1" value = "true" />
-<property name= "psm_num_2" value = "true" />
-<property name= "psm_num_3" value = "true"  />
+<xacro:property name= "ecm_num_1" value = "true" />
+<xacro:property name= "psm_num_1" value = "true" />
+<xacro:property name= "psm_num_2" value = "true" />
+<xacro:property name= "psm_num_3" value = "false"  />
 
 
 

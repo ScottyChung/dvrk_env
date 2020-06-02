@@ -4,8 +4,8 @@
 
 <xacro:macro name="suj" params="prefix">
 
-<property name="damping" value="0.2"/>
-<property name="friction" value="1"/>
+<xacro:property name="damping" value="0.2"/>
+<xacro:property name="friction" value="1"/>
 
 <link name="world"/>
 <joint name="${prefix}fixed" type="fixed">

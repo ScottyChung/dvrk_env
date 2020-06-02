@@ -32,9 +32,9 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.6 0.6 0.6 1</ambient>
-          <diffuse>0.6 0.6 0.6 1</diffuse>
-          <specular>0.1 0.1 0.1 1</specular>
+          <ambient>0.3012 0.4803 0.6151 1</ambient>
+          <diffuse>0.3012 0.4803 0.6151 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
       </visual>
@@ -71,8 +71,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.6 0.6 0.6 1</ambient>
-          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <ambient>0.2854 0.2719 0.9294 1</ambient>
+          <diffuse>0.2854 0.2719 0.9294 1</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
@@ -129,9 +129,9 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0 0 0 1</ambient>
-          <diffuse>0 0 0 1</diffuse>
-          <specular>0.8 0.8 0.8 1</specular>
+          <ambient>0.1689 0.3032 0.9294 1</ambient>
+          <diffuse>0.1689 0.3032 0.9294 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
       </visual>
@@ -186,8 +186,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0 0 0 1</ambient>
-          <diffuse>0 0 0 1</diffuse>
+          <ambient>0.008 0.0156 0.0668 1</ambient>
+          <diffuse>0.008 0.0156 0.0668 1</diffuse>
           <specular>0.8 0.8 0.8 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>

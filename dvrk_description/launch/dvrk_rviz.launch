@@ -9,12 +9,12 @@
  <arg name="rvizconfig" default="$(find dvrk_description)/rviz/dvrk.rviz" />
   <param
     name="robot_description"
-    command="$(find xacro)/xacro.py $(find dvrk_description)/dvrk/dvrk_launch.urdf.xacro" />
+    command="xacro --inorder $(find dvrk_description)/dvrk/dvrk_launch.urdf.xacro" />
   <param
     name="use_gui"
     value="$(arg gui)" />
   <rosparam>
-      source_list: [/dvrk/joint_states]
+      source_list: [/dvrk/mapped_joints]
   </rosparam>
   <node
     name="joint_state_publisher"

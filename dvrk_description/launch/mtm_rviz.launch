@@ -7,7 +7,7 @@
     <arg name="rate" default="20" />
 
     <param name="robot_description"
-           command="rosrun xacro xacro.py $(arg model)"/>
+           command="xacro --inorder $(arg model)"/>
     <param name="use_gui" value="$(arg gui)"/>
     <param name="rate" value="$(arg rate)"/>
 

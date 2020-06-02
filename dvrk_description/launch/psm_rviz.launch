@@ -9,14 +9,18 @@
  <arg name="rvizconfig" default="$(find dvrk_description)/rviz/psm.rviz" />
   <param
     name="robot_description"
-    command="$(find xacro)/xacro.py $(find dvrk_description)/psm/psm_launch.urdf.xacro" />
+    command="xacro --inorder $(find dvrk_description)/psm/psm_launch.urdf.xacro" />
   <param
     name="use_gui"
     value="$(arg gui)" />
   <node
     name="joint_state_publisher"
     pkg="joint_state_publisher"
-    type="joint_state_publisher" />
+    type="joint_state_publisher">
+    <rosparam param="source_list">
+      [my_joints]
+    </rosparam>
+  </node>
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"
